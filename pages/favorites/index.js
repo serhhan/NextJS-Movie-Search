@@ -1,7 +1,8 @@
 import { useAppContext } from "../../context/state";
+import FavMovies from "../../components/favMovies";
 
 const Favorites = () => {
-  return <div>Favoriler Sayfası</div>;
+  const state = useAppContext();
+  return <FavMovies state={state} />;
 };
-
 export default Favorites;

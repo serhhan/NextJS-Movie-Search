@@ -6,12 +6,9 @@ export function AppWrapper({ children }) {
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
-  let sharedState = {
-    movies,
-    addMovie,
-    favorites,
-    addFavorite,
-  };
+  function removeFavorite(item) {
+    setFavorites(favorites.filter((element) => element.imdbID !== item.imdbID));
+  }
 
   function addMovie(item) {
     setMovies([item]);
@@ -20,6 +17,14 @@ export function AppWrapper({ children }) {
   function addFavorite(item) {
     setFavorites([...favorites, item]);
   }
+
+  let sharedState = {
+    movies,
+    addMovie,
+    favorites,
+    addFavorite,
+    removeFavorite,
+  };
 
   return (
     <AppContext.Provider value={sharedState}>{children}</AppContext.Provider>

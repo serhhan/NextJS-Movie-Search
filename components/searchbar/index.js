@@ -6,6 +6,10 @@ const SearchBar = () => {
   const state = useAppContext();
   const [search, setSearch] = React.useState("");
 
+  const disableBtn = (value) => {
+    document.getElementById("btn").disabled = value;
+  };
+
   const getData = async () => {
     if (!search) return;
 
@@ -18,13 +22,14 @@ const SearchBar = () => {
 
     if (data.Response !== "False") {
       state.addMovie(data.Search);
-      // redirect to result page with data.Search
     }
-    state.addMovie(data.Search);
   };
 
   React.useEffect(() => {
     getData();
+    {
+      search.length > 1 ? disableBtn(false) : disableBtn(true);
+    }
   }, [search]);
 
   return (
@@ -45,7 +50,7 @@ const SearchBar = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
         <Link href="/result">
-          <button>Search</button>
+          <button id="btn">Search</button>
         </Link>
       </div>
     </div>
