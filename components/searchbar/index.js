@@ -1,12 +1,15 @@
 import React from "react";
+import { useAppContext } from "../../context/state";
+import Link from "next/link";
 
 const SearchBar = () => {
+  const state = useAppContext();
   const [search, setSearch] = React.useState("");
-  const [movies, setMovies] = React.useState([]);
 
   const getData = async () => {
     if (!search) return;
 
+    //S parametresi(search) kullanıldığında imdbpuanı vs gelmiyor.
     const res = await fetch(
       `https://www.omdbapi.com/?s=${search}&apikey=9034d9ea`
     );
@@ -14,9 +17,10 @@ const SearchBar = () => {
     const data = await res.json();
 
     if (data.Response !== "False") {
-      setMovies(data.Search);
+      state.addMovie(data.Search);
       // redirect to result page with data.Search
     }
+    state.addMovie(data.Search);
   };
 
   React.useEffect(() => {
@@ -40,15 +44,10 @@ const SearchBar = () => {
           placeholder="Enter movie name here"
           onChange={(e) => setSearch(e.target.value)}
         />
+        <Link href="/result">
+          <button>Search</button>
+        </Link>
       </div>
-      <ul>
-        {movies.map((movie, i) => (
-          <li key={i}>
-            <h6>{movie.Title}</h6>
-          </li>
-        ))}
-      </ul>
-      {!movies.length < 1 && <span>{movies.length} tane sonuç getirildi.</span>}
     </div>
   );
 };

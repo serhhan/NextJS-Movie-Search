@@ -4,13 +4,21 @@ const AppContext = createContext();
 
 export function AppWrapper({ children }) {
   const [movies, setMovies] = useState([]);
+  const [favorites, setFavorites] = useState([]);
+
   let sharedState = {
     movies,
     addMovie,
+    favorites,
+    addFavorite,
   };
 
-  function addMovie() {
-    setMovies([...movies, "test"]);
+  function addMovie(item) {
+    setMovies([item]);
+  }
+
+  function addFavorite(item) {
+    setFavorites([...favorites, item]);
   }
 
   return (

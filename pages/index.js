@@ -12,9 +12,6 @@ export default function Home(props) {
     <div className="container">
       slider
       <SearchBar />
-      <p>{JSON.stringify(state.movies)}</p>
-      {/* <Movies data={props.movies} /> */}
-      <button onClick={() => state.addMovie()}>Ekle</button>
     </div>
   );
 }
