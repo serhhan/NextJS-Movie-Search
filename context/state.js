@@ -1,10 +1,20 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    {
+      const favLocal = localStorage.getItem("favorites");
+      setFavorites(JSON.parse(favLocal));
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites)), [favorites];
+  });
 
   function removeFavorite(item) {
     setFavorites(favorites.filter((element) => element.imdbID !== item.imdbID));

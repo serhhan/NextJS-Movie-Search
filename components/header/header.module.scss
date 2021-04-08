@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px;
+  background: #fff;
+
+  .ulContainer {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    flex-basis: 100%;
+
+    li {
+      margin-left: 40px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+
+      .favorites {
+        color: #f5c518;
+        font-weight: 300;
+      }
+    }
+    .logo {
+      margin: 0 50px 0 150px;
+      font-size: 28px;
+      font-weight: 600;
+      cursor: pointer;
+
+      .logoUp {
+        color: #f5c518;
+      }
+    }
+  }
+  .searchBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: #f5f5f5;
+    padding-right: 20px;
+    margin-right: 100px;
+    border-radius: 8px;
+    flex-basis: 40%;
+
+    .input {
+      background: #f5f5f5;
+      width: 100%;
+      border-radius: 8px;
+      padding: 15px 10px;
+      outline: none;
+      transition: all 500ms ease-in;
+    }
+    .icon {
+    }
+  }
+}

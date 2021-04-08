@@ -10,8 +10,20 @@ export default function Home(props) {
 
   return (
     <div className="container">
-      slider
-      <SearchBar />
+      <Head>
+        <title>Movie UP</title>
+      </Head>
+      <div className="sliderContainer">
+        <div className="slider">
+          <img
+            src="/image/slider.png"
+            alt="Picture of people that watches film while eating popcorn"
+          />
+        </div>
+      </div>
+      <div className="altContainer">
+        <SearchBar />
+      </div>
     </div>
   );
 }

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAppContext } from "../../context/state";
 import Link from "next/link";
+import "./searchbar.module.scss";
 
 const SearchBar = () => {
   const state = useAppContext();
-  const [search, setSearch] = React.useState("");
+  const [search, setSearch] = useState("");
+  const [year, setYear] = useState("");
 
   const disableBtn = (value) => {
     document.getElementById("btn").disabled = value;
@@ -15,7 +17,7 @@ const SearchBar = () => {
 
     //S parametresi(search) kullanıldığında imdbpuanı vs gelmiyor.
     const res = await fetch(
-      `https://www.omdbapi.com/?s=${search}&apikey=9034d9ea`
+      `https://www.omdbapi.com/?s=${search}&y=${year}&apikey=9034d9ea`
     );
 
     const data = await res.json();
@@ -28,14 +30,18 @@ const SearchBar = () => {
   React.useEffect(() => {
     getData();
     {
-      search.length > 1 ? disableBtn(false) : disableBtn(true);
+      search.length > 2 ? disableBtn(false) : disableBtn(true);
     }
   }, [search]);
 
   return (
     <div>
       <div style={{ display: "flex" }}>
-        <input type="number" placeholder="Year"></input>
+        <input
+          type="number"
+          onChange={(e) => setYear(e.target.value)}
+          placeholder="Year"
+        ></input>
         <select>
           <option disabled selected hidden>
             Type
