@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useAppContext } from "../../context/state";
 import Link from "next/link";
-import "./searchbar.module.scss";
+import style from "./searchbar.module.scss";
+import { faSearch, faSearchDollar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SearchBar = () => {
   const state = useAppContext();
@@ -36,13 +38,14 @@ const SearchBar = () => {
 
   return (
     <div>
-      <div style={{ display: "flex" }}>
+      <div className={style.container}>
         <input
+          className={style.number}
           type="number"
           onChange={(e) => setYear(e.target.value)}
           placeholder="Year"
-        ></input>
-        <select>
+        />
+        <select className={style.select}>
           <option disabled selected hidden>
             Type
           </option>
@@ -51,12 +54,16 @@ const SearchBar = () => {
           <option value="episode">Episode</option>
         </select>
         <input
+          className={style.input}
           type="text"
           placeholder="Enter movie name here"
           onChange={(e) => setSearch(e.target.value)}
         />
         <Link href="/result">
-          <button id="btn">Search</button>
+          <button className={style.btn} id="btn">
+            Search
+            <FontAwesomeIcon className={style.icon} icon={faSearchDollar} />
+          </button>
         </Link>
       </div>
     </div>

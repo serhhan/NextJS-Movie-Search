@@ -23,6 +23,9 @@ export default function Home(props) {
       </div>
       <div className="altContainer">
         <SearchBar />
+        <div className="info">
+          <h2>Popular Movies</h2> <a href="#">View More ➝</a>
+        </div>
       </div>
     </div>
   );
