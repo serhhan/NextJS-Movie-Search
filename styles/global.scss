@@ -55,3 +55,24 @@ body {
 }
 
 //Resultpage
+
+.resultContainer {
+  display: flex;
+
+  flex-flow: wrap column;
+  align-items: center;
+  padding-top: 20px;
+
+  .searchResultContainer {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 60px 0 40px 300px;
+
+    h1 {
+      span {
+        color: #f5c518;
+      }
+    }
+  }
+}

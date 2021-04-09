@@ -8,8 +8,17 @@ const Result = () => {
   return (
     <>
       <Bar pageName={pageName} />
-      <SearchBar />
-      <Movies state={state} />
+      <div className="resultContainer">
+        <div className="searcBar">
+          <SearchBar />
+        </div>
+        <div className="searchResultContainer">
+          <h1>
+            Search result <span>{state.lastSearch}</span>
+          </h1>
+        </div>
+        <Movies state={state} />
+      </div>
     </>
   );
 };

@@ -1,23 +1,40 @@
-const FavMovies = ({ state }) => {
+import style from "./favMovies.module.scss";
+
+const favMovies = ({ state }) => {
   return (
-    <ul>
-      {state.favorites.map((movie, index) => (
-        <div>
-          <li key={index}>
-            <img src={movie.Poster}></img>
-            <span>{movie.imdbRating}</span>
-            <span>{movie.Year}</span>
-            <h2>{movie.Title}</h2>
-            <p>{movie.Plot}</p>
-            <button onClick={() => state.removeFavorite(movie)}>
-              Remove from Favorites
+    <ul className={style.container}>
+      {state.favorites.map((movie, i) => (
+        <li className={style.cardContainer} key={i}>
+          <img className={style.poster} src={movie.Poster}></img>
+          <div className={style.typeNfav}>
+            <div className={style.type}>Biography</div>
+            <button
+              className={style.removeFav}
+              onClick={() => state.removeFavorite(movie)}
+            >
+              <img src="./image/like.png" width="10px" />
             </button>
-          </li>
-        </div>
+          </div>
+          <div className={style.imdbNrate}>
+            <img
+              className={style.imdb}
+              src="./image/imdb.png"
+              alt="imdb logo"
+            />
+            <span className={style.rate} n>
+              8.8
+            </span>
+          </div>
+          <span className={style.year}>{movie.Year}</span>
+          <h2 className={style.title}>{movie.Title}</h2>
+          <p className={style.plot}>
+            Lorem ipsum dolor sit amet, consectetur matinas adipiscing elit, sed
+            do eiusmod tempor incididunt ut labore et dolare.
+          </p>
+        </li>
       ))}
     </ul>
   );
 };
 
-export default FavMovies;
-//poster, imdbRating, Title, Year, Plot//
+export default favMovies;

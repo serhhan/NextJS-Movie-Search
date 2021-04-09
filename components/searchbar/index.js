@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAppContext } from "../../context/state";
 import Link from "next/link";
 import style from "./searchbar.module.scss";
@@ -18,6 +18,7 @@ const SearchBar = () => {
     if (!search) return;
 
     //S parametresi(search) kullanıldığında imdbpuanı vs gelmiyor.
+
     const res = await fetch(
       `https://www.omdbapi.com/?s=${search}&y=${year}&apikey=9034d9ea`
     );
@@ -27,9 +28,11 @@ const SearchBar = () => {
     if (data.Response !== "False") {
       state.addMovie(data.Search);
     }
+
+    state.searchHistory(search);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     getData();
     {
       search.length > 2 ? disableBtn(false) : disableBtn(true);

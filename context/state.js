@@ -5,6 +5,7 @@ const AppContext = createContext();
 export function AppWrapper({ children }) {
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [lastSearch, setLastSearch] = useState("");
 
   useEffect(() => {
     const favLocal = localStorage.getItem("favorites");
@@ -27,11 +28,17 @@ export function AppWrapper({ children }) {
     setFavorites([...favorites, item]);
   }
 
+  function searchHistory(item) {
+    setLastSearch(item);
+  }
+
   let sharedState = {
     movies,
     addMovie,
     favorites,
+    lastSearch,
     addFavorite,
+    searchHistory,
     removeFavorite,
   };
 
