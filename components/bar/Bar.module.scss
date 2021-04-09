@@ -1,0 +1,14 @@
+.Container {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  padding-left: 200px;
+  background: linear-gradient(
+    90deg,
+    rgba(245, 197, 24, 0.26) 22.24%,
+    rgba(251, 247, 252, 0) 100%
+  );
+  span {
+    color: #f5c518;
+  }
+}

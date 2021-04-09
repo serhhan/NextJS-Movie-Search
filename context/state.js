@@ -7,11 +7,10 @@ export function AppWrapper({ children }) {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    {
-      const favLocal = localStorage.getItem("favorites");
-      setFavorites(JSON.parse(favLocal));
-    }
+    const favLocal = localStorage.getItem("favorites");
+    setFavorites(JSON.parse(favLocal));
   }, []);
+
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites)), [favorites];
   });

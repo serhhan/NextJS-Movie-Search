@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 0 250px;
+
+  .cardContainer {
+    display: flex;
+    margin: 16px 8px;
+    width: 200px;
+    flex-flow: column nowrap;
+    .poster {
+      height: 230px;
+      border-radius: 10px;
+    }
+    .typeNfav {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 8px;
+      position: relative;
+      bottom: 30px;
+      .type {
+        display: flex;
+        align-items: center;
+        margin-right: 102px;
+        padding: 6px 10px;
+        border-radius: 5px;
+        background: #f5c518;
+        font-size: 9px;
+      }
+      .addFav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: white;
+        border: 1px solid #f5c518;
+        transition: all 400ms ease-in-out;
+      }
+
+      .removeFav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: black;
+        border: 1px solid #f5c518;
+        transition: all 400ms ease-in-out;
+      }
+    }
+    .imdbNrate {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      .imdb {
+        width: 25px;
+        margin-right: 10px;
+      }
+      .rate {
+        font-size: 10px;
+        font-weight: 500;
+      }
+    }
+    .year {
+      font-size: 10px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #f5c518;
+    }
+
+    .title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .plot {
+      font-size: 9px;
+      opacity: 0.5;
+      line-height: 1.5;
+    }
+  }
+}
