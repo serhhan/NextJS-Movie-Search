@@ -8,7 +8,9 @@ const Favorites = () => {
   return (
     <>
       <Bar pageName={pageName} />
-      <FavMovies state={state} />;
+      <div className="favoritesContainer">
+        <FavMovies state={state} />
+      </div>
     </>
   );
 };

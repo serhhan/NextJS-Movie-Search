@@ -93,3 +93,47 @@
     }
   }
 }
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .container {
+    padding: 0;
+
+    .cardContainer {
+      margin: 20px 8px;
+      width: 150px;
+
+      .poster {
+        height: 200px;
+      }
+
+      .typeNfav {
+        .type {
+          margin-right: 50px;
+          font-size: 9px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .container {
+    padding: 0;
+
+    .cardContainer {
+      margin: 20px 8px;
+      width: 150px;
+
+      .poster {
+        height: 200px;
+      }
+
+      .typeNfav {
+        .type {
+          margin-right: 50px;
+          font-size: 9px;
+        }
+      }
+    }
+  }
+}

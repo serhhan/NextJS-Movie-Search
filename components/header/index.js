@@ -1,6 +1,5 @@
 import Link from "next/link";
 import style from "./header.module.scss";
-import Image from "next/image";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

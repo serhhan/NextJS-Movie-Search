@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  flex-flow: row wrap;
   flex-direction: column;
   .thread {
     margin-left: 250px;
@@ -97,6 +98,126 @@
         font-size: 9px;
         opacity: 0.5;
         line-height: 1.5;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .wrapper {
+    .thread {
+      margin-left: 0px;
+      align-self: center;
+    }
+
+    .container {
+      padding: 0;
+      flex-direction: row;
+
+      .cardContainer {
+        margin: 20px 8px;
+        width: 150px;
+
+        .poster {
+          height: 200px;
+        }
+
+        .typeNfav {
+          .type {
+            margin-right: 50px;
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .wrapper {
+    .thread {
+      margin-left: 0px;
+      align-self: center;
+    }
+
+    .container {
+      padding: 0;
+      flex-direction: row;
+
+      .cardContainer {
+        margin: 20px 8px;
+        width: 150px;
+
+        .poster {
+          height: 200px;
+        }
+
+        .typeNfav {
+          .type {
+            margin-right: 50px;
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+  .wrapper {
+    .thread {
+      margin-left: 0px;
+      align-self: center;
+    }
+
+    .container {
+      padding: 0;
+      flex-direction: row;
+
+      .cardContainer {
+        margin: 20px 8px;
+        width: 150px;
+
+        .poster {
+          height: 200px;
+        }
+
+        .typeNfav {
+          .type {
+            margin-right: 50px;
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    .thread {
+      margin-left: 0px;
+      align-self: center;
+    }
+
+    .container {
+      padding: 0;
+      flex-direction: row;
+
+      .cardContainer {
+        margin: 20px 8px;
+        width: 150px;
+
+        .poster {
+          height: 200px;
+        }
+
+        .typeNfav {
+          .type {
+            margin-right: 50px;
+            font-size: 9px;
+          }
+        }
       }
     }
   }

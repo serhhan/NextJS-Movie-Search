@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useAppContext } from "../../context/state";
 import Link from "next/link";
 import style from "./searchbar.module.scss";
-import { faSearch, faSearchDollar } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SearchBar = () => {
@@ -64,8 +64,10 @@ const SearchBar = () => {
         />
         <Link href="/result">
           <button className={style.btn} id="btn" type="submit">
-            Search
-            <FontAwesomeIcon className={style.icon} icon={faSearchDollar} />
+            <span className={style.search}>Search</span>
+            <div className={style.iconCnt}>
+              <FontAwesomeIcon className={style.icon} icon={faSearch} />
+            </div>
           </button>
         </Link>
       </div>

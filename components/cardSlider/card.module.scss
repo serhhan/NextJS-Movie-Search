@@ -6,12 +6,13 @@
 
   .mainContainer {
     padding: 20px;
+    margin: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     background: hsl(0, 0%, 96%);
     border-radius: 4px;
-    margin: 10px;
 
     .poster {
       width: 240px;
@@ -27,14 +28,16 @@
       padding: 10px 0 0 30px;
 
       .topContainer {
-        img {
-          margin-right: 5px;
-        }
         padding-top: 5px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: row;
+
+        img {
+          margin-right: 5px;
+        }
+
         .rate {
           font-size: 14px;
           margin: 0 130px 0 5px;
@@ -81,7 +84,11 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+
         .addFav {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           width: 120px;
           padding: 15px;
           margin-right: 40px;
@@ -94,6 +101,9 @@
 
         .removeFav {
           width: 120px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           padding: 15px;
           margin-right: 40px;
           background: #fffdf5;
@@ -109,6 +119,117 @@
           font-size: 12px;
           line-height: 24px;
           color: #f5c518;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  .container {
+    width: 300px;
+
+    .mainContainer {
+      flex-direction: column;
+
+      .poster {
+        width: 250px;
+      }
+
+      .rightContainer {
+        padding: 0 0 0 0;
+        .topContainer {
+          .rate {
+            font-size: 12px;
+            margin-right: 45px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .container {
+    width: 900px;
+    .mainContainer {
+      width: 600px;
+      padding: 2px;
+
+      .rightContainer {
+        .midContainer {
+          p {
+            padding-bottom: 10px;
+          }
+        }
+        .botContainer {
+          .addFav {
+            height: 20px;
+            width: 150px;
+          }
+
+          .removeFav {
+            height: 20px;
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .container {
+    width: 900px;
+    .mainContainer {
+      width: 750px;
+      padding: 2px;
+
+      .rightContainer {
+        .midContainer {
+          p {
+            padding-bottom: 10px;
+          }
+        }
+        .botContainer {
+          .addFav {
+            height: 20px;
+            width: 150px;
+          }
+
+          .removeFav {
+            height: 20px;
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+    .mainContainer {
+      width: 900px;
+      padding: 2px;
+
+      .rightContainer {
+        .midContainer {
+          p {
+            padding-bottom: 10px;
+          }
+        }
+        .botContainer {
+          .addFav {
+            height: 20px;
+            width: 150px;
+          }
+
+          .removeFav {
+            height: 20px;
+            width: 150px;
+          }
         }
       }
     }

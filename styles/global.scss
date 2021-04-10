@@ -16,7 +16,6 @@ body {
 //Homepage
 .container {
   overflow: hidden;
-
   .sliderContainer {
     background: #f5c518;
     .slider {
@@ -75,5 +74,118 @@ body {
         color: #f5c518;
       }
     }
+  }
+}
+
+//Favoritespage
+
+@media only screen and (min-width: 320px) and (max-width: 600px) {
+  //Homepage
+  .container {
+    overflow: hidden;
+
+    .sliderContainer {
+      .slider {
+        display: flex;
+        margin-bottom: 20px;
+        img {
+          width: 100%;
+          height: 180px;
+          opacity: 0.15;
+        }
+      }
+    }
+
+    .altContainer {
+      .info {
+        a {
+          font-size: 12px;
+          margin-left: 0px;
+          text-align: center;
+        }
+
+        .indexThread {
+          font-size: 16px;
+        }
+      }
+      .cardContainer {
+        width: 300px;
+      }
+    }
+  }
+
+  //Resultpage
+}
+
+.resultContainer {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap column;
+  align-items: center;
+  padding-top: 20px;
+
+  .searchResultContainer {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  //Homepage
+  .container {
+    overflow: hidden;
+
+    .sliderContainer {
+      .slider {
+        display: flex;
+        margin-bottom: 20px;
+        img {
+          width: 100%;
+          height: 300px;
+          opacity: 0.15;
+        }
+      }
+    }
+
+    .altContainer {
+      .info {
+        a {
+          font-size: 12px;
+          margin-left: 0px;
+          text-align: center;
+        }
+
+        .indexThread {
+          font-size: 16px;
+        }
+      }
+      .cardContainer {
+        width: 900px;
+      }
+    }
+  }
+}
+
+//Resultpage
+
+.resultContainer {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap column;
+  align-items: center;
+  padding-top: 20px;
+
+  .searchResultContainer {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .cardContainer {
+    width: 900px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .cardContainer {
+    width: 1200px;
   }
 }

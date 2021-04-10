@@ -30,9 +30,7 @@ const CardSlider = () => {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       centeredSlides={false}
-      loop={true}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      loop={false}
     >
       {popularMovies.slice(0, 3).map((movie) => (
         <SwiperSlide key={movie.imdbID}>
