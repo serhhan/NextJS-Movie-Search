@@ -31,6 +31,7 @@ body {
   .altContainer {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-flow: column nowrap;
     position: relative;
     z-index: 2;

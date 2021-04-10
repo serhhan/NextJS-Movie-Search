@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import style from "./movies.module.scss";
+import { useState } from "react";
 
 const Movies = ({ state }) => {
   function isFavorite(id) {
@@ -52,4 +52,3 @@ const Movies = ({ state }) => {
 };
 
 export default Movies;
-//poster, imdbRating, Title, Year, Plot//

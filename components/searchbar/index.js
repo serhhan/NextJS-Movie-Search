@@ -63,7 +63,7 @@ const SearchBar = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
         <Link href="/result">
-          <button className={style.btn} id="btn">
+          <button className={style.btn} id="btn" type="submit">
             Search
             <FontAwesomeIcon className={style.icon} icon={faSearchDollar} />
           </button>
