@@ -1,4 +1,4 @@
-import style from "./Bar.module.scss";
+import style from "./Bar.module.scss"";"
 
 const Bar = (props) => {
   return (

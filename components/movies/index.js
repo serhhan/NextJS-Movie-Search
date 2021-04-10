@@ -8,7 +8,7 @@ const Movies = ({ state }) => {
 
   return (
     <ul className={style.container}>
-      {state.movies[0].map((movie, i) => (
+      {state.movies.map((movie, i) => (
         <li className={style.cardContainer} key={i}>
           <img className={style.poster} src={movie.Poster}></img>
           <div className={style.typeNfav}>
