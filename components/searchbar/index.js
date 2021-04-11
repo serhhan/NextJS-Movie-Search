@@ -20,7 +20,7 @@ const SearchBar = () => {
     //S parametresi(search) kullanıldığında imdbpuanı vs gelmiyor.
 
     const res = await fetch(
-      `https://www.omdbapi.com/?s=${search}&y=${year}&&apikey=9034d9ea`
+      `https://www.omdbapi.com/?s=${search}&y=${year}&apikey=9034d9ea`
     );
 
     const data = await res.json();
