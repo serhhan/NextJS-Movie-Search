@@ -1,29 +1,34 @@
 import style from "./movies.module.scss";
 import { useState } from "react";
 
-const Movies = ({ state }) => {
+const Movies = ({
+  state: { movies, addFavorite, removeFavorite },
+  favorites,
+}) => {
   function isFavorite(id) {
-    return state.favorites.includes(id);
+    return favorites && favorites.includes(id);
   }
 
   return (
     <ul className={style.container}>
-      {state.movies.map((movie, i) => (
+      {console.log("movies", movies)}
+      {movies.map((movie, i) => (
         <li className={style.cardContainer} key={i}>
+          {console.log(movie)}
           <img className={style.poster} src={movie.Poster}></img>
           <div className={style.typeNfav}>
             <div className={style.type}>Biography</div>
             {!isFavorite(movie) ? (
               <button
                 className={style.addFav}
-                onClick={() => state.addFavorite(movie)}
+                onClick={() => addFavorite(movie)}
               >
                 <img src="./image/like.png" width="10px" />
               </button>
             ) : (
               <button
                 className={style.removeFav}
-                onClick={() => state.removeFavorite(movie)}
+                onClick={() => removeFavorite(movie)}
               >
                 <img src="./image/like.png" width="10px" />
               </button>
@@ -35,9 +40,7 @@ const Movies = ({ state }) => {
               src="./image/imdb.png"
               alt="imdb logo"
             />
-            <span className={style.rate} n>
-              8.8
-            </span>
+            <span className={style.rate}>8.8</span>
           </div>
           <span className={style.year}>{movie.Year}</span>
           <h2 className={style.title}>{movie.Title}</h2>

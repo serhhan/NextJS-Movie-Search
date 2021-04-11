@@ -12,10 +12,10 @@ const CardSlider = () => {
       `https://www.omdbapi.com/?s=the%20godfather&apikey=9034d9ea`
     );
 
-    const data = await res.json();
+    const movie = await res.json();
 
-    if (data.Response !== "False") {
-      setPopularMovies(data.Search);
+    if (movie.Response !== "False") {
+      setPopularMovies(movie.Search);
     }
   };
   useEffect(() => {
@@ -33,7 +33,7 @@ const CardSlider = () => {
       loop={false}
     >
       {popularMovies.slice(0, 3).map((movie) => (
-        <SwiperSlide key={movie.imdbID}>
+        <SwiperSlide>
           <Card movie={movie} />
         </SwiperSlide>
       ))}

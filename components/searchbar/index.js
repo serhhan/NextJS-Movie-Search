@@ -26,7 +26,7 @@ const SearchBar = () => {
     const data = await res.json();
 
     if (data.Response !== "False") {
-      state.addMovie(data.Search);
+      state.addMovie(data);
     }
 
     state.searchHistory(search);
@@ -48,8 +48,8 @@ const SearchBar = () => {
           onChange={(e) => setYear(e.target.value)}
           placeholder="Year"
         />
-        <select className={style.select}>
-          <option disabled selected hidden>
+        <select className={style.select} defaultValue="">
+          <option disabled hidden value="">
             Type
           </option>
           <option value="movie">Movie</option>

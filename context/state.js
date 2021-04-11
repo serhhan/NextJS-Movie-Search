@@ -16,16 +16,23 @@ export function AppWrapper({ children }) {
     localStorage.setItem("favorites", JSON.stringify(favorites)), [favorites];
   });
 
-  function removeFavorite(item) {
-    setFavorites(favorites.filter((element) => element.imdbID !== item.imdbID));
-  }
-
   function addMovie(item) {
-    setMovies([item]);
+    setMovies([...item.Search]);
   }
 
   function addFavorite(item) {
+    if (
+      favorites &&
+      favorites.find((favorite) => favorite.imdbID === item.imdbID)
+    )
+      return;
+
+    if (!favorites) return setFavorites([item]);
     setFavorites([...favorites, item]);
+  }
+
+  function removeFavorite(item) {
+    setFavorites(favorites.filter((element) => element.imdbID !== item.imdbID));
   }
 
   function searchHistory(item) {

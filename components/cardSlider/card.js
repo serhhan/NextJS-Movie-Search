@@ -5,7 +5,7 @@ const Card = ({ movie }) => {
   const state = useAppContext();
 
   function isFavorite(id) {
-    return state.favorites.includes(id);
+    return state.favorites && state.favorites.includes(id);
   }
 
   return (
