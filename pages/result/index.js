@@ -12,7 +12,7 @@ const Result = () => {
       <Bar pageName={pageName} />
       <div className="resultContainer">
         <div className="searcBar">
-          <SearchBar />
+          <SearchBar state={state} />
         </div>
         <div className="searchResultContainer">
           <h1>

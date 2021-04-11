@@ -2,8 +2,7 @@ import style from "./movies.module.scss";
 import { useState } from "react";
 
 const Movies = ({
-  state: { movies, addFavorite, removeFavorite },
-  favorites,
+  state: { movies, addFavorite, removeFavorite, favorites },
 }) => {
   function isFavorite(id) {
     return favorites && favorites.includes(id);
