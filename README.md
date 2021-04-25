@@ -1,1 +1,1 @@
-Technologies: NextJS - Context API
+NextJS - Code Challenge of 90Pixel
