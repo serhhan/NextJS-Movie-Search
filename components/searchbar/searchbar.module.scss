@@ -31,14 +31,19 @@
   .btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     background: #f5c518;
     color: white;
-    width: 12%;
+    width: 14%;
     font-size: 12px;
     margin-right: 8px;
     cursor: pointer;
     box-shadow: 0px 7px 20px rgba(141, 40, 173, 0.15);
     transition: all 500ms ease-out;
+
+    .search {
+      margin: 0;
+    }
     &:hover {
       background: #ad8908;
     }
@@ -54,6 +59,7 @@
   .container {
     width: 280px;
     height: 50px;
+    padding: 0;
     align-items: center;
 
     * {
@@ -76,14 +82,10 @@
     }
 
     .btn {
-      width: 20%;
+      width: 14%;
       height: 30px;
       justify-content: center;
-      font-size: 10px;
-      .search {
-        display: block;
-        margin-left: 25px;
-      }
+      font-size: 8px;
       .iconCnt {
         width: 10px;
         height: 1px;
@@ -122,14 +124,10 @@
     }
 
     .btn {
-      width: 20%;
+      width: 16%;
       height: 30px;
-      justify-content: center;
       font-size: 10px;
-      .search {
-        display: block;
-        margin-left: 25px;
-      }
+      margin-right: 5px;
       .iconCnt {
         width: 10px;
         height: 1px;
